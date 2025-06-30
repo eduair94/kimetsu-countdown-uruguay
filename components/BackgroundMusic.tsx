@@ -26,7 +26,7 @@ export default function BackgroundMusic() {
       console.log("Audio data loaded");
     };
 
-    const handleError = (e) => {
+    const handleError = (e: any) => {
       console.error("Audio loading error:", e);
       console.error("Audio error details:", audio.error);
       const errorMsg = audio.error ? `Error ${audio.error.code}: ${audio.error.message || "Unknown audio error"}` : "Audio failed to load";
