@@ -8,7 +8,7 @@ export interface CountdownData {
 }
 
 export function calculateCountdown(): CountdownData {
-  const premiereDate = new Date('2025-09-10T00:00:00-03:00'); // Uruguay timezone
+  const premiereDate = new Date("2025-09-10T00:00:00-03:00"); // Uruguay timezone
   const now = new Date();
   const timeLeft = premiereDate.getTime() - now.getTime();
 
@@ -44,17 +44,17 @@ export function formatCountdownText(countdown: CountdownData): string {
   }
 
   const parts: string[] = [];
-  
+
   if (countdown.days > 0) {
-    parts.push(`${countdown.days} día${countdown.days !== 1 ? 's' : ''}`);
+    parts.push(`${countdown.days} día${countdown.days !== 1 ? "s" : ""}`);
   }
-  
+
   if (countdown.hours > 0) {
-    parts.push(`${countdown.hours} hora${countdown.hours !== 1 ? 's' : ''}`);
+    parts.push(`${countdown.hours} hora${countdown.hours !== 1 ? "s" : ""}`);
   }
-  
+
   if (countdown.minutes > 0 && countdown.days === 0) {
-    parts.push(`${countdown.minutes} minuto${countdown.minutes !== 1 ? 's' : ''}`);
+    parts.push(`${countdown.minutes} minuto${countdown.minutes !== 1 ? "s" : ""}`);
   }
 
   if (parts.length === 0) {
@@ -65,7 +65,7 @@ export function formatCountdownText(countdown: CountdownData): string {
     return parts[0];
   }
 
-  return parts.slice(0, -1).join(', ') + ' y ' + parts[parts.length - 1];
+  return parts.slice(0, -1).join(", ") + " y " + parts[parts.length - 1];
 }
 
 export function generateShareText(countdown: CountdownData): string {
